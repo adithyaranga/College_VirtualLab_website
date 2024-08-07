@@ -1,0 +1,20 @@
+Program:
+class DivideByZero
+{
+public static void main(String args[])
+{
+int x = 0; int y =10;
+try
+{
+ int z = y/x;
+}
+catch(ArithmeticException ae)
+{
+ System.out.println("Divisor cannot be zero");
+}
+}
+}
+Output:
+C:ProgramFiles/Java/jdk1.7..0_09/bin>javac DivideByZero.java
+C:ProgramFiles/Java/jdk1.7..0_09/bin>java DivideByZero
+Divisor cannot be zero

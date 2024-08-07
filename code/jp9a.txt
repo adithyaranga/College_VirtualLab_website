@@ -1,0 +1,15 @@
+Program:
+import java.applet.*;
+import java.awt.*;
+/*<applet code="task9a.class" height=200 width=200>
+</applet>*/
+public class task9a extends Applet
+{
+public void paint(Graphics g)
+{
+g.drawString("hello world",25,50);
+}
+}
+Output:
+D:\education\java\programs>javac task9a.java
+D:\education\java\programs>appletviewer task9a.java

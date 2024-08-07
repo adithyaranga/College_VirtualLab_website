@@ -1,0 +1,28 @@
+Program:
+//Palindrome using reverse()method.
+import java.util.*;
+class PalindromeString
+{
+public static void main(String args[])
+{
+Scanner s=new Scanner(System.in);// Create a Scanner object
+System.out.println("Enter the string");// Take the data from the user.
+String st1=s.nextLine();//Read the data entered by the user.
+StringBuffer sb=new StringBuffer(st1);// Create StringBuffer obj for st1
+sb.reverse();// Reverse the letters
+// Check & Print if palindrome
+if(st1.equals(sb.toString()))
+{
+System.out.println("String "+st1+" is Palindrome");
+}
+else
+{
+System.out.println("String "+st1+" is notPalindrome");
+}
+}
+}
+Output:
+C:ProgramFiles/Java/jdk1.7..0_09/bin>javac PalindromeString.java
+C:ProgramFiles/Java/jdk1.7..0_09/bin>java PalindromeString
+Enter the string: pooja
+String pooja is not a palindrome
