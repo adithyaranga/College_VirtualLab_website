@@ -1,0 +1,11 @@
+
+SQL> Lock table employees in share mode nowait;
+Output:
+SQL> Lock table employees in share mode wait 5;
+Output:
+SQL> Lock table employee in exclusive mode nowait;
+Output:
+SQL> Lock table employees in exclusive mode wait 5;
+Output:
+SQL> SELECT * from employees where first_name='Hermann' for update of salary;
+Output:

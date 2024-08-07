@@ -1,0 +1,33 @@
+Aim: Write commands on SQL Functions
+a. Display the employee name concatenated with empno.
+Query:
+SQL>select concat(empno, concat(' ', ename)) from emp;
+Output:
+b. Display half of employee name in upper case and half in lower case.
+Query:
+SQL>Selectupper(substr(ename,0,length(ename)/2))||lower(substr(ename,(length(ename)/2)+1,le
+ngth(ename))) “Name” from emp;
+c. Display the month name of date “14-jul-09” in full.
+Query:
+SQL>select to_char(to_date('14-jul-09'),'MONTH') “Month” from dual;
+Output:
+d. Display the DOB of all employees in the format 'dd-mm-yy'.
+Query:
+SQL> select to_char(dob,'dd-mm-yy') from emp;
+Output:
+e. Display the date two months after the DOB of employees.
+Query:
+SQL> select add_months(dob,2) from emp;
+f. Display the last date of that month in “05-Oct-09”.
+Query:
+SQL>select last_day(to_date('05-oct-09')) “Last” from dual;
+Output:
+7. Display the rounded date in the year format, month format, day format in the employee.
+Query:
+SQL> select round(dob, 'dd'), round(dob, 'month'), round(dob, 'year') from emp;
+Output:
+8.Display the commissions earned by employees. If they do not earn commission, display it as
+“No Commission”.
+Query:
+SQL>selectemployee_id,last_name,nvl(to_char(commission_pct),’NoCommission’)”commissio
+n” from employees;

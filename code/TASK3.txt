@@ -1,0 +1,7 @@
+
+Aim: Practice on TCL commands(Commit,Rollback,Savepoint)
+SQL>Commit;
+Output:
+SQL>Rollback;
+Output:
+SQL> Savepoint S_1;

@@ -1,0 +1,59 @@
+Aim: Practices on DCL Commands
+1. SQL>Create user test identified by pswd;
+Output:
+2. SQL> Grant create session, create table, create sequence, create view to test;
+Output:
+3. SQL>Create role manager;
+SQL>Grant create table, create view to manager;
+SQL>Grant manager to test;
+Output:
+4. SQL>Alter user test identified by qwerty;
+Output:
+5. SQL>Grant select on employees to test;
+Output:
+6. SQL>Grant update (department_name,location_id) on departments to test;
+7. SQL>Grant select,insert on hr.locations to test;
+Output:
+8. SQL>Revoke select,insert on departments from test;
+Output:
+INDEXES
+Aim: Practices on Function based indexes
+SQL>create index emp_index on emp (upper(ename));
+Output:
+SQL>select employee_id,last_name,job_id from employees where last_name between 'N' and
+'P';
+Output:
+2. Creating Index while creating Table.
+SQL>create table emp2 (empnonumber(6) PRIMARY KEY USING INDEX (CREATE INDEX
+emp_idx ON emp2(empno)) ,ename varchar2(20),job varchar2(20));
+User-defined indexes:
+SQL>select index_name,table_name from user_indexes where table_name='EMP2';
+Output:
+3. create table emp3(empnonumber(6) primary key, ename varchar2(20), job varchar2(10));
+Output:
+Default indexes.
+SQL>select index_name,table_name from user_indexes where table_name='EMP3';
+Output:
+4. Displaying all the indexes.
+SQL>Select index_name, table_name from user_indexes;
+5. SQL>select table_name, index_name, column_name from user_ind_columns where
+table_name='EMPLOYEES';
+Output:
+6. Dropping an index:
+SQL> drop index emp_index;
+Output:
+SEQUENCE
+1. SQL>create sequence my_seq start with 10 increment by 10 maxvalue 100 nocache;
+Output:
+2. SQL>select my_seq.nextval from dual;
+Output:
+3. SQL>select my_seq.currval from dual;
+Output:
+4. SQL>create table dept(deptno number(6),dname varchar2(20),loc varchar2(10));
+SQL>insert into dept values(my_seq.nextval,'Executive','US');
+SQL>insert into dept values(my_seq.nextval,'Marketing','UK');
+Output:
+5. SQL>drop sequence my_seq;
+
+
+
